@@ -10,6 +10,16 @@ Requirments
 
 commands
 
+    cd resource-provision
+
+
+modified the below parameters  in terragrunt.hcl
+
+    1. region
+    2. backend configuration
+    3. input 
+
+
     terragrunt init
     terragrunt plan
     terragrunt apply
