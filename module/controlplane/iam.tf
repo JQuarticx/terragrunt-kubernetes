@@ -1,7 +1,6 @@
 resource "aws_iam_role" "control_plane" {
   name = "eks-${var.name}-control-plane"
   path = "/"
-
   assume_role_policy = <<EOF
 {
     "Version": "2012-10-17",

@@ -27,16 +27,4 @@ resource "aws_eks_cluster" "cluster" {
     },
     var.tags,
   )
-  # depends_on = [aws_cloudwatch_log_group.cluster]
 }
-
-# resource "aws_cloudwatch_log_group" "cluster" {
-#   name              = "/aws/eks/${var.name}/cluster"
-#   retention_in_days = var.log_retention_days
-#   tags = merge(
-#     {
-#       "Name" = format("%s", var.name)
-#     },
-#     var.tags,
-#   )
-# }
