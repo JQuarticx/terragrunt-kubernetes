@@ -1,7 +1,7 @@
 # main module
 
 module "eks-control-plane" {
-    source                      = "../module/controlplane"
+    source                      = "../module/controlplane/"
     tags                        = var.tags
     name                        = var.name
     env                         = var.env
@@ -16,13 +16,13 @@ module "eks-control-plane" {
 }
 
 module "eks-worker-node-iam-role" {
-    source                      = "../module/worker-node-iam-role"
+    source                      = "../module/eks_node_iam_role/"
     name                        = var.name
     namespace                   = var.namespace
 }
 
 module "eks-worker-node" {
-    source                      = "../module/eks_node_groups"
+    source                      = "../module/eks_node_groups/"
     tags                        = var.tags
     vpc_id                      = var.vpc_id
     vpc_security_group_ids      = var.vpc_security_group_ids

@@ -8,10 +8,6 @@ generate "provider" {
     EOF
 }
 
-# terraform {
-#   source = "."
-# }
-
 inputs = {
     
     name                        = ""
@@ -41,7 +37,6 @@ inputs = {
     } 
 }
 
-
 remote_state {
   backend = "s3"
   generate = {
@@ -49,7 +44,7 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket         = "s3bucketname"                 # Bucket name changes required
+    bucket         = "mon-fiddler"                 # Bucket name changes required
     key            = "dev/terraform.tfstate"
     region         = "us-east-2"
     encrypt        = true
